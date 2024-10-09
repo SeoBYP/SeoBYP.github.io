@@ -660,6 +660,7 @@ h3.my-profression{
   height: 50px;
   padding: 0 50px;
 }
+
 @media (max-width:1199px){
   .section .container{
     padding-top:70px;
