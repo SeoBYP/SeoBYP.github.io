@@ -12,6 +12,7 @@ body.dark{
   --bg-black-50:#393939;
   --text-black-900:#ffffff;
   --text-black-700:#e9e9e9;
+  --text-black-500:#c9c9c9;
 }
 body{
   line-height: 1.5;
@@ -24,6 +25,7 @@ body{
   padding: 0;
   outline: none;
   text-decoration: none;
+  text-transform: none; /* 자동 대문자 변환 방지 */
   box-sizing: border-box;
 }
 ::before,::after{
@@ -361,10 +363,25 @@ h3.my-profression{
 }
 .about .about-content .personal-info .info-item p span{
   font-weight: 400;
-  color: var(--text-black-700);
-  margin-left: 4px;
-  display: inline-block;
+  color: var(--skin-color);
+  text-decoration: none;
+  display: block; /* 줄바꿈을 위해 block으로 변경 */
 }
+
+.about .about-content .personal-info .info-item p span a{
+  font-weight: 400;
+  color: var(--skin-color);
+  display: block; /* 줄바꿈을 위해 block으로 변경 */
+  text-decoration: none;
+}
+
+.about .about-content .personal-info .info-item p span a:hover{
+  text-decoration: underline;
+  color: var(--skin-color);
+  cursor: pointer;
+}
+
+
 .about .about-content .personal-info .buttons{
   margin-top: 30px;
 
@@ -488,6 +505,23 @@ h3.my-profression{
   text-align: justify;
   color: var(--text-black-700);
 }
+
+.about .about-content .timeline .readme-btn{
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 10px;
+  padding: 6px 25px;
+  color: white;
+  border-radius: 40px;
+  display: inline-block;
+  white-space: nowrap;
+  background: var(--skin-color);
+  transition: all 0.3s ease;
+}
+.about .about-content .timeline .readme-btn:hover{
+  transform: scale(1.05);
+}
+
 /*services*/
 .services .container{
   padding-bottom: 40px;
@@ -645,6 +679,223 @@ h3.my-profression{
 .contact .contact-form .btn{
   height: 50px;
   padding: 0 50px;
+}
+/* popup */
+.popup {
+  display: none; /* 기본적으로 보이지 않게 설정 */
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* 배경을 어둡게 설정 */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup .popup-contents {
+  background: var(--bg-black-100);
+  border: 1px solid var(--bg-black-50);
+  border-radius: 10px;
+  padding: 20px;
+  width: 800px; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 팝업을 중앙으로 이동 */
+  box-shadow: 0 0 100px rgba(92, 68, 68, 0.15);
+  transition: all 0.35s ease;
+}
+
+.popup .popup-contents .popup-title{
+  color: #ffffff;
+}
+
+.popup .popup-contents .timeline-date{
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: var(--text-black-700);
+}
+
+.popup .popup-contents .timeline-date .fa{
+  margin-right: 5px;
+}
+
+.popup .popup-contents .timeline-item{
+  position: relative;
+  padding-left: 37px;
+  padding-bottom: 20px;
+}
+
+.popup .popup-contents .timeline-item:last-child{
+  padding-bottom: 0;
+}
+
+.popup .popup-contents .timeline-item::before{
+  content: '';
+  width: 1px;
+  position: absolute;
+  height: 100%;
+  left: 7px;
+  top: 0;
+  background-color: var(--skin-color);
+}
+
+.popup .popup-contents .timeline-item .circle-dot{
+  position: absolute;
+  left: 0;
+  top: 7px;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: var(--skin-color);
+}
+
+.popup .popup-contents .timeline-title{
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+  color: var(--text-black-900);
+}
+.popup .popup-contents .timeline-text{
+  line-height: 25px;
+  font-size: 16px;
+  text-align: justify;
+  color: var(--text-black-700);
+}
+
+.popup .popup-contents .timeline-item .embed-card {
+  background-color: var(--bg-black-100);
+  border: 1px solid var(--bg-black-50);
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.popup .popup-contents .timeline-item .embed-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.popup .popup-contents .timeline-item .embed-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.popup .popup-contents .timeline-item .embed-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.popup .popup-contents .timeline-item .embed-info {
+  color: var(--skin-color);
+}
+.popup .popup-contents .timeline-item .embed-info p {
+  margin: 0;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.popup .popup-contents .timeline-item .embed-info span {
+  font-size: 12px;
+  color: var(--text-black-700);
+}
+
+.popup .popup-contents .timeline-item .info-item{
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.popup .popup-contents .timeline-item .info-item p{
+  font-weight: 600;
+  padding: 10px 0;
+  font-size: 16px;
+  color: var(--skin-color);
+  border-bottom: 1px solid var(--bg-black-50);
+}
+
+.popup .popup-contents .timeline-item .info-item p span{
+  font-weight: 400;
+  color: var(--text-black-900);
+  text-decoration: none;
+  display: block; /* 줄바꿈을 위해 block으로 변경 */
+}
+
+.popup .popup-contents .timeline-item .technology-stack-item{
+  margin-bottom: 30px;
+  flex:  0 0 25%;
+  max-width: 25%;
+}
+.popup .popup-contents .timeline-item .technology-stack-item .technology-stack-item-inner{
+  background-color: var(--bg-black-100);
+  border: 1px solid var(--bg-black-50);
+  border-radius: 10px;
+  padding: 30px 15px;
+  text-align: center;
+  transition: all 0.35s ease;
+}
+.popup .popup-contents .timeline-item .technology-stack-item .technology-stack-item-inner:hover{
+  box-shadow: 0 0 20px rgba(48,46,77,0.15);
+}
+.popup .popup-contents .technology-stack-item .technology-stack-item-inner .icon{
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.popup .popup-contents .technology-stack-item .technology-stack-item-inner .icon .fa{
+  font-size: 40px;
+  line-height: 60px;
+  color: var(--skin-color);
+  transition:  all 0.3s ease;
+}
+
+.popup .popup-contents .technology-stack-item .technology-stack-item-inner:hover .icon{
+  background: var(--skin-color);
+}
+.popup .popup-contents .technology-stack-item .technology-stack-item-inner:hover .icon .fa{
+  font-size: 25px;
+  color: #ffffff;
+}
+
+.popup .popup-contents .technology-stack-item .technology-stack-item-inner h4{
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: var(--text-black-900);
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.popup .popup-contents .technology-stack-item .technology-stack-item-inner p{
+  font-size: 16px;
+  color: var(--text-black-700);
+  line-height: 25px;
+}
+
+.popup .popup-contents .close-btn {
+  font-size: 24px;
+  font-weight: bold;
+  color: #aaa;
+  cursor: pointer;
+  position: absolute; /* 닫기 버튼을 오른쪽 위에 고정 */
+  top: 20px;
+  right: 20px;
+}
+
+
+.close-btn:hover {
+  color: black;
 }
 
 @media (max-width:1199px){

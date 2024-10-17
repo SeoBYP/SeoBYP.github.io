@@ -90,3 +90,12 @@ document.addEventListener('scroll', function () {
   // 해당 섹션에 맞는 링크에 active 클래스 추가
   navLinks[index].classList.add('active');
 });
+
+
+function openPopup(popupId) {
+  document.getElementById(popupId).style.display = 'flex';
+}
+
+function closePopup(popupId) {
+  document.getElementById(popupId).style.display = 'none';
+}
