@@ -73,3 +73,20 @@ function asideSectionTogglerBtn(){
     allSection[i].classList.toggle("open");
   }
 }
+
+document.addEventListener('scroll', function () {
+  // 모든 섹션과 사이드바 메뉴 항목을 선택
+  const sections = document.querySelectorAll('.section');
+  const navLinks = document.querySelectorAll('.aside .nav li a');
+
+  let index = sections.length;
+
+  // 현재 스크롤 위치가 어느 섹션에 있는지 확인
+  while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+
+  // 모든 링크에서 active 클래스 제거
+  navLinks.forEach((link) => link.classList.remove('active'));
+
+  // 해당 섹션에 맞는 링크에 active 클래스 추가
+  navLinks[index].classList.add('active');
+});
