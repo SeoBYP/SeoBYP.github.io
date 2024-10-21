@@ -94,8 +94,10 @@ document.addEventListener('scroll', function () {
 
 function openPopup(popupId) {
   document.getElementById(popupId).style.display = 'flex';
+  document.body.classList.add('no-scroll');
 }
 
 function closePopup(popupId) {
   document.getElementById(popupId).style.display = 'none';
+  document.body.classList.remove('no-scroll');
 }

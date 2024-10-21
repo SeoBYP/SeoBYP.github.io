@@ -28,6 +28,9 @@ body{
   text-transform: none; /* 자동 대문자 변환 방지 */
   box-sizing: border-box;
 }
+body.no-scroll {
+  overflow: hidden; /* 팝업이 열렸을 때, body의 스크롤 비활성화 */
+}
 ::before,::after{
   box-sizing: border-box;
 }
@@ -528,8 +531,8 @@ h3.my-profression{
 }
 .services .services-item{
   margin-bottom: 30px;
-  flex:  0 0 33.33%;
-  max-width: 33.33%;
+  flex:  0 0 50%;
+  max-width: 50%;
 }
 .services .services-item .services-item-inner{
   background-color: var(--bg-black-100);
@@ -589,17 +592,46 @@ h3.my-profression{
 .portfolio .portfolio-heading h2{
   color: var(--text-black-900);
   font-weight: 500;
+  position: relative;
+}
+.portfolio .portfolio-heading h2::before{
+  content: '';
+  height: 4px;
+  width: 20%;
+  background-color: var(--skin-color);
+  position: absolute;
+  top: 100%;
+  left: 0;
 }
 .portfolio .portfolio-item{
   flex: 0 0 33.33%;
   max-width: 33.33%;
   margin-bottom: 30px;
+  filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.04)) drop-shadow(0px 3px 8px rgba(0, 0, 0, 0.12)) drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.6)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  backdrop-filter: blur(12px);
 }
 .portfolio .portfolio-item-inner{
   border: 6px solid var(--bg-black-100);
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
+}
+
+.portfolio-text {
+  padding: 15px;
+  background-color: var(--bg-black-100);
+}
+
+.portfolio-text h4 {
+  font-size: 18px;
+  color: var(--skin-color);
+  margin-bottom: 10px;
+}
+
+.portfolio-text p {
+  font-size: 14px;
+  color: var(--text-black-700);
+  margin-bottom: 0;
 }
 .portfolio .portfolio-item-inner .portfolio-img img{
   width: 100%;
@@ -619,8 +651,8 @@ h3.my-profression{
   margin-bottom: 60px;
 }
 .contact .contact-info-item{
-  flex:0 0 25%;
-  max-width: 25%;
+  flex:0 0 33.33%;
+  max-width: 33.33%;
   text-align: center;
   margin-bottom: 60px;
 }
@@ -692,6 +724,7 @@ h3.my-profression{
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  overflow: hidden;
 }
 
 .popup .popup-contents {
@@ -703,10 +736,30 @@ h3.my-profression{
   position: absolute;
   top: 50%;
   left: 50%;
+  overflow-y: auto;  /* 세로 스크롤 가능 */
+  overflow-x: hidden; /* 가로 스크롤 방지 */
   transform: translate(-50%, -50%); /* 팝업을 중앙으로 이동 */
   box-shadow: 0 0 100px rgba(92, 68, 68, 0.15);
   transition: all 0.35s ease;
 }
+
+.popup .popup-body {
+  max-height: 800px;
+  overflow-y: auto;  /* 팝업 내부에서 세로 스크롤 가능 */
+  overflow-x: hidden; /* 팝업 내부에서 가로 스크롤 방지 */
+}
+
+
+/* 스크롤바 숨기기 */
+.popup .popup-body::-webkit-scrollbar {
+  display: none; /* 웹킷 기반 브라우저에서 스크롤바 숨기기 */
+}
+
+.popup .popup-body {
+  -ms-overflow-style: none;  /* IE, Edge에서 스크롤바 숨기기 */
+  scrollbar-width: none;      /* Firefox에서 스크롤바 숨기기 */
+}
+
 
 .popup .popup-contents .popup-title{
   color: #ffffff;
@@ -832,15 +885,17 @@ h3.my-profression{
 
 .popup .popup-contents .timeline-item .technology-stack-item{
   margin-bottom: 30px;
-  flex:  0 0 25%;
+  flex:  1 1 25%;
   max-width: 25%;
+
 }
 .popup .popup-contents .timeline-item .technology-stack-item .technology-stack-item-inner{
   background-color: var(--bg-black-100);
   border: 1px solid var(--bg-black-50);
   border-radius: 10px;
-  padding: 30px 15px;
+  padding: 10px;
   text-align: center;
+  min-height: 250px; /* 필요한 최소 높이 설정 */
   transition: all 0.35s ease;
 }
 .popup .popup-contents .timeline-item .technology-stack-item .technology-stack-item-inner:hover{
@@ -862,10 +917,23 @@ h3.my-profression{
   transition:  all 0.3s ease;
 }
 
+.popup .popup-contents .technology-stack-item .technology-stack-item-inner .icon .fa-brands{
+  font-size: 40px;
+  line-height: 60px;
+  color: var(--skin-color);
+  transition:  all 0.3s ease;
+}
+
 .popup .popup-contents .technology-stack-item .technology-stack-item-inner:hover .icon{
   background: var(--skin-color);
 }
+
 .popup .popup-contents .technology-stack-item .technology-stack-item-inner:hover .icon .fa{
+  font-size: 25px;
+  color: #ffffff;
+}
+
+.popup .popup-contents .technology-stack-item .technology-stack-item-inner:hover .icon .fa-brands{
   font-size: 25px;
   color: #ffffff;
 }
@@ -887,12 +955,9 @@ h3.my-profression{
   font-size: 24px;
   font-weight: bold;
   color: #aaa;
+  float: right;
   cursor: pointer;
-  position: absolute; /* 닫기 버튼을 오른쪽 위에 고정 */
-  top: 20px;
-  right: 20px;
 }
-
 
 .close-btn:hover {
   color: black;
