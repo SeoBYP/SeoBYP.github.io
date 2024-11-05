@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
 
 :root {
   --bg-black-900: #f2f2fc;
@@ -53,7 +53,6 @@ ul {
   display: block;
   padding: 0 30px;
   opacity: 1;
-
 }
 
 .main-content {
@@ -111,7 +110,7 @@ ul {
 }
 
 .section-title h2::before {
-  content: '';
+  content: "";
   height: 4px;
   width: 50px;
   background-color: var(--skin-color);
@@ -121,7 +120,7 @@ ul {
 }
 
 .section-title h2::after {
-  content: '';
+  content: "";
   height: 4px;
   width: 25px;
   background-color: var(--skin-color);
@@ -199,7 +198,7 @@ ul {
 }
 
 .aside .logo a::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 20px;
   height: 20px;
@@ -210,7 +209,7 @@ ul {
 }
 
 .aside .logo a::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 20px;
   height: 20px;
@@ -249,7 +248,7 @@ ul {
 }
 
 .aside .nav-toggler span::before {
-  content: '';
+  content: "";
   height: 2px;
   width: 18px;
   background: var(--skin-color);
@@ -264,7 +263,7 @@ ul {
 }
 
 .aside .nav-toggler span::after {
-  content: '';
+  content: "";
   height: 2px;
   width: 18px;
   background: var(--skin-color);
@@ -351,7 +350,7 @@ h3.my-profression {
 }
 
 .home-img::after {
-  content: '';
+  content: "";
   position: absolute;
   height: 80px;
   width: 80px;
@@ -362,7 +361,7 @@ h3.my-profression {
 }
 
 .home-img::before {
-  content: '';
+  content: "";
   position: absolute;
   height: 80px;
   width: 80px;
@@ -382,7 +381,6 @@ h3.my-profression {
 .about .about-content {
   flex: 0 0 100%;
   max-width: 100%;
-
 }
 
 .about .about-content .about-text {
@@ -448,10 +446,8 @@ h3.my-profression {
   cursor: pointer;
 }
 
-
 .about .about-content .personal-info .buttons {
   margin-top: 30px;
-
 }
 
 .about .about-content .personal-info .buttons .btn {
@@ -547,7 +543,7 @@ h3.my-profression {
 }
 
 .about .about-content .timeline .timeline-item::before {
-  content: '';
+  content: "";
   width: 1px;
   position: absolute;
   height: 100%;
@@ -689,7 +685,7 @@ h3.my-profression {
 }
 
 .portfolio .portfolio-heading h2::before {
-  content: '';
+  content: "";
   height: 4px;
   width: 20%;
   background-color: var(--skin-color);
@@ -702,7 +698,10 @@ h3.my-profression {
   flex: 0 0 33.33%;
   max-width: 33.33%;
   margin-bottom: 30px;
-  filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.04)) drop-shadow(0px 3px 8px rgba(0, 0, 0, 0.12)) drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.6)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.04))
+    drop-shadow(0px 3px 8px rgba(0, 0, 0, 0.12))
+    drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.6))
+    drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   backdrop-filter: blur(12px);
 }
 
@@ -756,8 +755,8 @@ h3.my-profression {
 }
 
 .contact .contact-info-item {
-  flex: 0 0 33.33%;
-  max-width: 33.33%;
+  flex: 0 0 100%;
+  max-width: 100%;
   text-align: center;
   margin-bottom: 60px;
 }
@@ -874,7 +873,6 @@ h3.my-profression {
   /* 팝업 내부에서 가로 스크롤 방지 */
 }
 
-
 /* 스크롤바 숨기기 */
 .popup .popup-body::-webkit-scrollbar {
   display: none;
@@ -887,7 +885,6 @@ h3.my-profression {
   scrollbar-width: none;
   /* Firefox에서 스크롤바 숨기기 */
 }
-
 
 .popup .popup-contents .popup-title {
   color: #ffffff;
@@ -915,7 +912,7 @@ h3.my-profression {
 }
 
 .popup .popup-contents .timeline-item::before {
-  content: '';
+  content: "";
   width: 1px;
   position: absolute;
   height: 100%;
@@ -1019,10 +1016,13 @@ h3.my-profression {
   margin-bottom: 30px;
   flex: 1 1 25%;
   max-width: 25%;
-
 }
 
-.popup .popup-contents .timeline-item .technology-stack-item .technology-stack-item-inner {
+.popup
+  .popup-contents
+  .timeline-item
+  .technology-stack-item
+  .technology-stack-item-inner {
   background-color: var(--bg-black-100);
   border: 1px solid var(--bg-black-50);
   border-radius: 10px;
@@ -1033,11 +1033,19 @@ h3.my-profression {
   transition: all 0.35s ease;
 }
 
-.popup .popup-contents .timeline-item .technology-stack-item .technology-stack-item-inner:hover {
+.popup
+  .popup-contents
+  .timeline-item
+  .technology-stack-item
+  .technology-stack-item-inner:hover {
   box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
 
-.popup .popup-contents .technology-stack-item .technology-stack-item-inner .icon {
+.popup
+  .popup-contents
+  .technology-stack-item
+  .technology-stack-item-inner
+  .icon {
   height: 60px;
   width: 60px;
   border-radius: 50%;
@@ -1047,30 +1055,54 @@ h3.my-profression {
   transition: all 0.3s ease;
 }
 
-.popup .popup-contents .technology-stack-item .technology-stack-item-inner .icon .fa {
+.popup
+  .popup-contents
+  .technology-stack-item
+  .technology-stack-item-inner
+  .icon
+  .fa {
   font-size: 40px;
   line-height: 60px;
   color: var(--skin-color);
   transition: all 0.3s ease;
 }
 
-.popup .popup-contents .technology-stack-item .technology-stack-item-inner .icon .fa-brands {
+.popup
+  .popup-contents
+  .technology-stack-item
+  .technology-stack-item-inner
+  .icon
+  .fa-brands {
   font-size: 40px;
   line-height: 60px;
   color: var(--skin-color);
   transition: all 0.3s ease;
 }
 
-.popup .popup-contents .technology-stack-item .technology-stack-item-inner:hover .icon {
+.popup
+  .popup-contents
+  .technology-stack-item
+  .technology-stack-item-inner:hover
+  .icon {
   background: var(--skin-color);
 }
 
-.popup .popup-contents .technology-stack-item .technology-stack-item-inner:hover .icon .fa {
+.popup
+  .popup-contents
+  .technology-stack-item
+  .technology-stack-item-inner:hover
+  .icon
+  .fa {
   font-size: 25px;
   color: #ffffff;
 }
 
-.popup .popup-contents .technology-stack-item .technology-stack-item-inner:hover .icon .fa-brands {
+.popup
+  .popup-contents
+  .technology-stack-item
+  .technology-stack-item-inner:hover
+  .icon
+  .fa-brands {
   font-size: 25px;
   color: #ffffff;
 }
@@ -1101,7 +1133,7 @@ h3.my-profression {
   color: black;
 }
 
-@media (max-width:1199px) {
+@media (max-width: 1199px) {
   .section .container {
     padding-top: 70px;
   }
@@ -1141,8 +1173,7 @@ h3.my-profression {
   }
 }
 
-@media (max-width:991px) {
-
+@media (max-width: 991px) {
   .contact .contact-info-item,
   .portfolio .portfolio-item,
   .services .services-item {
@@ -1160,8 +1191,7 @@ h3.my-profression {
   }
 }
 
-@media (max-width:767px) {
-
+@media (max-width: 767px) {
   .contact .contact-form .col-6,
   .contact .contact-info-item,
   .portfolio .portfolio-item,
@@ -1174,7 +1204,7 @@ h3.my-profression {
     max-width: 100%;
   }
 }
-@media (max-width:480px){
+@media (max-width: 480px) {
   .about .about-content .info-item {
     flex: 0 0 100% !important; /* 강제 적용 */
     max-width: 100% !important; /* 강제 적용 */
