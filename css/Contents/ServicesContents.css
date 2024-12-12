@@ -1,0 +1,52 @@
+﻿/*services*/
+.services .container {
+    padding-bottom: 40px;
+}
+
+.services .services-item {
+    margin-bottom: 30px;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.services .services-item:hover {
+    transform: scale(1.05);
+}
+
+.services .services-item .services-item-inner {
+    background-color: var(--bg-black-100);
+    border: 1px solid var(--bg-black-50);
+    border-radius: 10px;
+    padding: 30px 15px;
+    text-align: center;
+    transition: all 0.35s ease;
+}
+
+.services .services-item .services-item-inner:hover {
+    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+}
+
+.services .services-item .services-item-inner .icon {
+    height: 80px;
+    width: 80px;
+    display: flex;
+    margin: 0 auto 10px;
+    transition: all 0.3s ease;
+    color: var(--skin-color);
+    /*fill: var(--skin-color); /* SVG 아이콘에 직접 fill 적용 */
+    /* 아이콘 색상 */
+}
+
+.services .services-item .services-item-inner h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--text-black-900);
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.services .services-item .services-item-inner p {
+    font-size: 16px;
+    color: var(--text-black-700);
+    line-height: 25px;
+}
